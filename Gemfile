@@ -31,6 +31,7 @@ end
 
 
 gem 'jquery-rails'
+gem 'sass', '3.4.22'
 
 
 # To use ActiveModel has_secure_password
