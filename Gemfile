@@ -37,6 +37,7 @@ gem 'sass', '3.2.13'
 gem 'strong_parameters'
 gem 'devise'
 gem 'faker'
+gem "figaro"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
