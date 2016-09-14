@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
 ruby "2.0.0"
 gem 'rails', '3.2.18'
-gem 'strong_parameters'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'faker'
 
 group :production do
   gem 'pg'
@@ -35,7 +34,9 @@ end
 gem 'jquery-rails'
 gem 'sass', '3.2.13'
 
-
+gem 'strong_parameters'
+gem 'devise'
+gem 'faker'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
