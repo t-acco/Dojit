@@ -61,7 +61,7 @@ Dojit::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { host: 'https://tom-dojit.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'tom-dojit.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
 
