@@ -34,10 +34,11 @@ end
 gem 'jquery-rails'
 gem 'sass', '3.2.13'
 
-gem 'strong_parameters'
-gem 'devise'
-gem 'faker'
-gem "figaro"
+gem 'strong_parameters' #requirer and permit
+gem 'devise' # users
+gem 'faker' # fake data
+gem "figaro" 
+gem 'pundit' #user types
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
