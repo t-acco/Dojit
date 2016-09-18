@@ -40,6 +40,9 @@ gem 'faker' # fake data
 gem "figaro" 
 gem 'pundit' #user types
 gem 'redcarpet' #markdown
+gem 'carrierwave'
+gem "mini_magick" #image manifulation
+gem 'fog'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
