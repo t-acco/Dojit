@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     @topic = Topic.find(params[:topic_id])
+    @post.topic = @topic
     authorize @post
 
     if @post.save
