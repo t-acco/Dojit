@@ -280,6 +280,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     warden (1.2.6)
       rack (>= 1.0)
+    will_paginate (3.0.7)
     xml-simple (1.1.5)
 
 PLATFORMS
@@ -305,3 +306,4 @@ DEPENDENCIES
   sqlite3
   strong_parameters
   uglifier (>= 1.0.3)
+  will_paginate (~> 3.0.5)
