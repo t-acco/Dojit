@@ -39,6 +39,7 @@ gem 'devise' # users
 gem 'faker' # fake data
 gem "figaro" 
 gem 'pundit' #user types
+gem 'redcarpet' #markdown
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -52,5 +53,5 @@ gem 'pundit' #user types
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
+# To use debugmager
 # gem 'debugger'
