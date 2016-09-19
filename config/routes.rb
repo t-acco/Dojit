@@ -4,10 +4,13 @@ Dojit::Application.routes.draw do
   resources :users, only: [:update]
   
   resources :topics do
-    resources :posts, except: [:index] do 
-      resources :comments, only: [:create, :new, :destroy]
-    end
+   resources :posts, except: [:index]
   end
+
+  resources :posts, only: [] do
+    resources :comments, only: [:create, :new, :destroy]
+  end
+
 
   get 'about' => 'welcome#about'
  

@@ -11,7 +11,7 @@
     <div>
     <h2>Comments </h2>
       <% if policy(Comment.new).create? %>
-      <%= link_to "New Comment", new_topic_post_comment_path(@topic,@post), class: 'btn btn-success' %>
+      <%= link_to "New Comment", new_post_comment_path(@post), class: 'btn btn-success' %>
     <% end %>
      <%= render({partial: 'comments/comment', collection: @post.comments}) %>
     </div>
