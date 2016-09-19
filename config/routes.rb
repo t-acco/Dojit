@@ -5,7 +5,7 @@ Dojit::Application.routes.draw do
   
   resources :topics do
     resources :posts, except: [:index] do 
-      resources :comments, only: [:create, :new]
+      resources :comments, only: [:create, :new, :destroy]
     end
   end
 

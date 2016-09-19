@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
   attr_accessible :body, :title, :user, :topic, :image
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
   belongs_to :user
   belongs_to :topic
   mount_uploader :image, PostUploader

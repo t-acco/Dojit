@@ -7,7 +7,10 @@
       <%= comment.body %>  
     </p>
     <small>
-    <%= comment.user.name %>
+    <%= comment.user.name %> commented <%= time_ago_in_words(comment.created_at) %> ago
+    <% if policy(comment).destroy? %>
+        | <%= link_to "Delete", [@topic, @post, comment], method: :delete %>
+      <% end %>
   </small>
   </div>
 </div>
