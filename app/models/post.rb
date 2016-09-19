@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
+  include Rails.application.routes.url_helpers
+  extend Paginate
   attr_accessible :body, :title, :user, :topic, :image
 
   has_many :comments

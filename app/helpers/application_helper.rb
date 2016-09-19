@@ -13,4 +13,23 @@ module ApplicationHelper
     redcarpet = Redcarpet::Markdown.new(renderer, extension)
     (redcarpet.render text).html_safe
   end
+
+  def will_helper(arr)
+
+    htmlcode = ""
+
+    (arr.num_of_pages).times do |index|
+      if (arr[0].instance_of? Topic)
+        if (arr.current_page == index)
+          htmlcode += " #{index + 1}"
+        else
+          htmlcode += "<a href='#{arr[0].topics_path}?page=#{index}'>#{index + 1} </a>"
+        end
+      else
+        htmlcode +=  "<a href='#{arr[0].topics_path}/#{arr[0].topic.id}?page=#{index}'>#{index + 1} </a>"
+      end
+    end
+
+    htmlcode.html_safe
+  end
 end
