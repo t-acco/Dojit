@@ -13,4 +13,8 @@ module ApplicationHelper
     redcarpet = Redcarpet::Markdown.new(renderer, extension)
     (redcarpet.render text).html_safe
   end
+
+  def my_name
+    "Tom"
+  end
 end

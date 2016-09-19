@@ -1,0 +1,13 @@
+<div class="media">
+  <div class="pull-left">
+    <%= image_tag(comment.user.avatar.tiny.url) if comment.user.avatar.length > 0 %>
+  </div>
+  <div class="media-body">
+    <p>
+      <%= comment.body %>  
+    </p>
+    <small>
+    <%= comment.user.name %>
+  </small>
+  </div>
+</div>
