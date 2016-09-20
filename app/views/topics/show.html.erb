@@ -10,6 +10,7 @@
     <% @posts.each do |post| %>
       <div class="media">
         <div class="pull-left">
+            <%= render partial: 'votes/voter', locals: { post: post } %>
             <%= image_tag(post.image.thumb.url, class: 'media-object') if post.image? %>  
         </div>
         <div class="media-body">

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
    attr_accessible :email, :password, :password_confirmation, :name, :role, :avatar
    has_many :posts
    has_many :comments
+   has_many :votes
    mount_uploader :avatar, AvatarUploader
 
   def admin?
