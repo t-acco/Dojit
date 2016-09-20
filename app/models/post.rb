@@ -40,6 +40,6 @@ class Post < ActiveRecord::Base
 
   def create_vote
     vote = votes.create(value: 1, user: user)
-    vote.save!
+    vote.save
   end
 end
