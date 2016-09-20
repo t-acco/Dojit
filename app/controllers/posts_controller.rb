@@ -21,6 +21,7 @@ class PostsController < ApplicationController
 
     if @post.save
       @topic = Topic.find(params[:topic_id])
+      @post.create_vote
       flash[:notice] = "Post was saved."
       redirect_to [@topic, @post]
     else
