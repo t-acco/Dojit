@@ -68,8 +68,10 @@ user = User.new(
   password: 'Tom666555',
   role: 'admin'
 )
-user.skip_reconfirmation!
+user.skip_confirmation!
 user.save!
+
+
 
 # Create an admin user
 admin = User.new(

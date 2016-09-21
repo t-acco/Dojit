@@ -21,6 +21,7 @@ class PostsController < ApplicationController
 
     if save_with_initial_vote
       @topic = Topic.find(params[:topic_id])
+      
       flash[:notice] = "Post was saved."
       redirect_to [@topic, @post]
     else
