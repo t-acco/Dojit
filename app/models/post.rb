@@ -10,7 +10,9 @@ class Post < ActiveRecord::Base
   mount_uploader :image, PostUploader
 
   default_scope { order('rank DESC') }
-  scope :visible_to, -> (user) { user ? all : joins(:topic).where('topics.public' => true) }
+  scope :visible_to, -> (user) { user ? all : public_topic_post }
+  scope :last_week_post, -> (user) { user ? where("posts.created_at > ?", 7.days.ago) :  public_topic_post.where("posts.created_at > ?", 7.days.ago) }
+  scope :public_topic_post, -> { joins(:topic).where('topics.public' => true) }
 
   validates :title, length: {minimum: 5}, presence: true
   validates :body, length: { minimum: 20 }, presence: true
