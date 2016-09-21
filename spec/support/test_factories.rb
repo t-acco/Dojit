@@ -1,4 +1,6 @@
 module TestFactories
+  include Warden::Test::Helpers
+
   def associated_post(options={})
 
     post_options = {     
