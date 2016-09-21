@@ -48,6 +48,7 @@ gem 'carrierwave'
 gem "mini_magick" #image manifulation
 gem 'fog'
 gem 'will_paginate', '~> 3.0.5'
+gem 'capybara' # vitis pathes virtualy for rspec
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -17,4 +17,13 @@ module ApplicationHelper
   def my_name
     "Tom"
   end
+
+  def vote_link_classes(post, dir)
+
+    if (dir == 'up')
+      "glyphicon glyphicon-chevron-up #{(current_user.voted?(post) && current_user.voted?(post).up_vote?) ? 'voted' : ''}"
+    else
+      "glyphicon glyphicon-chevron-down #{(current_user.voted?(post) && current_user.voted?(post).down_vote?) ? 'voted' : ''}"
+    end
+  end
 end

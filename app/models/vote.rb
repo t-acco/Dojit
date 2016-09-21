@@ -10,6 +10,14 @@ class Vote < ActiveRecord::Base
   #validates :user, presence: true
   #validates :post, presence: true
 
+  def up_vote?
+    value == 1
+  end
+
+  def down_vote?
+    value == -1
+  end
+
   private
 
   def update_post
