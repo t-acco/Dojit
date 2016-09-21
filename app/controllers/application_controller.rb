@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include Pundit
+  require 'will_paginate/array'
   protect_from_forgery
 
   before_filter :configure_permitted_parameters, if: :devise_controller?

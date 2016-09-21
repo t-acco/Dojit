@@ -21,8 +21,9 @@ end
 users = User.all
 
 # Create Topics
-15.times do
+15.times do |index|
   Topic.create!(
+    public: (index % 2 == 0),
     name:         Faker::Lorem.sentence,
     description:  Faker::Lorem.paragraph
   )
