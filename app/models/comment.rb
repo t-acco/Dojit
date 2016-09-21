@@ -9,7 +9,7 @@ class Comment < ActiveRecord::Base
   validates :post, presence: true
   validates :user, presence: true
 
-  after_create :send_favorite_emails
+  after_create :send_favorite_emails 
 
   private
 

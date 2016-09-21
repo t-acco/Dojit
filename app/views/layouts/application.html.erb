@@ -5,7 +5,11 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag    "welcome"%>
   <%= javascript_include_tag "application" %>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -16,7 +20,14 @@
 
         <div class="pull-right user-info">
           <% if current_user %>
-           Hello <%= link_to (current_user.name || current_user.email), edit_user_registration_path %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+            <%= image_tag(current_user.avatar.tiny.url) if current_user.avatar? %>
+            Hello <%= link_to (current_user.name || current_user.email), current_user %>!
+            <%= link_to edit_user_registration_path, class: 'btn btn-primary btn-sm' do %>
+              <span class="glyphicon glyphicon-user"></span>
+            <% end %>
+            <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' do %>
+              <span class="glyphicon glyphicon-log-out"></span>
+             <% end %>
           <% else %>
             <%= link_to "Sign In", new_user_session_path %> or
             <%= link_to "Sign Up", new_user_registration_path %>
