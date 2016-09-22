@@ -49,6 +49,8 @@ gem "mini_magick" #image manifulation
 gem 'fog'
 gem 'will_paginate', '~> 3.0.5'
 gem 'capybara' # vitis pathes virtualy for rspec
+gem 'database_cleaner'
+gem 'factory_girl_rails', '~> 4.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
