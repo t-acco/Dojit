@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
     @post = Post.find(params[:post_id])
     @comment.post = @post
+    @new_comment = Comment.new
 
     authorize @comment
 
@@ -21,8 +22,9 @@ class CommentsController < ApplicationController
       flash[:error] = "Error saving command"
     end
 
-    redirect_to [@post.topic, @post]
-
+    respond_with(@comment) do |format|
+      format.html { redirect_to [@post.topic, @post] }
+    end
   end
 
   def destroy

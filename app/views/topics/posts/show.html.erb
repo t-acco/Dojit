@@ -13,10 +13,14 @@
       <%= image_tag(@post.image.url) if @post.image? %>
       <div>
       <h2>Comments </h2>
-        <% if policy(Comment.new).create? %>
-        <%= link_to "New Comment", new_post_comment_path(@post), class: 'btn btn-success' %>
+        <div class='js-comments'>
+          <%= render({partial: 'comments/comment', collection: @post.comments}) %>
+       </div>
+       <% if policy(Comment.new).create? %>
+          <div class='new-comment'>
+            <%= render partial: 'comments/form', locals: { post: @post, comment: @post.comments.new } %>
+          </div>
       <% end %>
-       <%= render({partial: 'comments/comment', collection: @post.comments}) %>
       </div>
   </div>
   <div class="col-md-4" style="margin-top:10px">
